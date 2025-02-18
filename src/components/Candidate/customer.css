@@ -1,0 +1,40 @@
+.customer-page{
+    display: flex;
+    padding-top: 150px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    background-color: #f5f5f5;
+}
+.customer-page h1{
+    color: black;
+}
+.jobs-list-cus{
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    
+    gap: 1rem;
+    padding: 1rem;
+    justify-content: center;
+    align-items: center;
+
+}
+.job-cus{
+    width: 30%;
+    height: 100px;
+    border-radius: 20px;
+    background: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
+    
+}
+.job-link{
+    text-decoration: none;
+    color: white;
+}
