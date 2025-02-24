@@ -2,8 +2,9 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import './shortlist.css';
-import download from '../../../assets/download-square-svgrepo-com.svg'
+
 import { toast } from "react-toastify";
+import Require from "../../Require/Require";
 const ShortlistedCandidates = () => {
   const { jobId } = useParams(); // Get Job ID from URL
   console.log("Job ID:", jobId);
@@ -51,20 +52,38 @@ const ShortlistedCandidates = () => {
         setProcessing(false);
       });
   };
-
+  const handleNotify = async () => {
+    axios
+      .post(`http://localhost:5000/api/notifications/notify/${jobId}`)
+      .then((res) => {
+        console.log("Notification Response:", res.data);
+        toast.success("Notifications sent successfully!");
+      })
+      .catch((err) => {
+        console.error("Error sending notifications", err);
+        toast.error("Failed to send notifications.");
+  });
+}
   return (
     <div className="shortlisted">
+      <Require jobid={jobId}/>
+      <div className="shortlist-right">
       <h2>{screening ? "📋 Shortlisted Candidates":"Uploaded Candidates"}</h2>
+      <div className="two-btns">
       <button onClick={processResumes} disabled={processing} className="process_btn">
         {processing ? "Processing..." : "🔄 Process Resumes"}
       </button>
-
+      <button className="process_btn" onClick={handleNotify}>📩 Notify Candidates</button>
+      </div>
       {loading ? (
-        <p>Loading shortlisted candidates...</p>
+        <div className="shortlisted_list" style={{"height":"100vh"}}>
+        <p style={{"color":"white", "fontSize":"20px","fontWeight":"500"}}>Loading ...</p>
+        </div>
       ) : candidates.length > 0 ? (
-        <ul className="shortlisted_list">
+        <>
+        <div className="shortlisted_list">
           {candidates.map((candidate,index) => (
-            <li key={candidate._id} className="shortlisted_item" style={{backgroundColor: index<3 && screening?"#b0970c":"#fff"}}>
+            <div key={candidate._id} className="shortlisted_item" style={{backgroundColor: index<3 && screening?"#b0970c":"#fff"}}>
               {candidate.name}  
               <a
                 href={`http://localhost:5000/api/resumes/download/${candidate._id}`}
@@ -72,12 +91,16 @@ const ShortlistedCandidates = () => {
                className="download_btn_shortlist">
                 📥
               </a>
-            </li>
+            </div>
           ))}
-        </ul>
+        </div>
+        
+        </>
+
       ) : (
         <p>No shortlisted candidates available</p>
       )}
+    </div>
     </div>
   );
 };

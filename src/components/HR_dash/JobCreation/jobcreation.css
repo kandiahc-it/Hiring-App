@@ -1,104 +1,125 @@
-/* === Global Styling === */
-* {
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
-  }
+/* General styling */
+.job-creation {
+  width: 50%;
+  height: fit-content;
+  padding-top: 150px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.job-h2 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Form styling */
+.job-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Input fields */
+.job-form input {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border 0.3s ease;
+}
+
+.job-form input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Requirement List */
+.requirements-list {
+  margin-top: 15px;
+  text-align: left;
+  background: #f8f8f8;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.requirement-item {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.requirement-key {
+  width: 40%;
+  font-weight: bold;
+  background: #eee;
+  border: none;
+  padding: 8px;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.requirement-item input {
+  flex: 1;
+}
+
+/* Add & Remove Buttons */
+.add_btn,
+.remove-btn {
+  border: none;
+  padding: 8px 12px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.add_btn {
+  background: #28a745;
+  color: #fff;
+}
+
+.add_btn:hover {
+  background: #218838;
+}
+
+.remove-btn {
   
-  /* === Upload Container === */
-  .upload-container {
-    max-width: 450px;
-    padding-top:150px;
-    margin-left: auto;
-    margin-right: auto;
-    background: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    transition: 0.3s;
-  }
-  
-  .upload-container:hover {
-    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
-  }
-  
-  /* === Heading === */
-  .upload-container h2 {
-    color: #333;
-    font-weight: 600;
-    margin-bottom: 15px;
-  }
-  
-  /* === Input Fields === */
-  .input-group {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    margin-bottom: 20px;
-  }
-  
-  .input-field {
-    padding: 12px;
-    border: 2px solid #ccc;
-    border-radius: 8px;
-    font-size: 16px;
-    transition: border-color 0.3s;
-  }
-  
-  .input-field:focus {
-    border-color: #007bff;
-    outline: none;
-  }
-  
-  /* === File Upload Box === */
-  .upload-box {
-    margin-bottom: 20px;
-  }
-  
-  .upload-input {
-    display: none;
-  }
-  
-  .upload-label {
-    display: block;
-    padding: 12px;
-    background: #007bff;
-    color: white;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: all ease 0.3s;
-  }
-  
-  .upload-label:hover {
-    background: #0056b3;
-  }
-  
-  /* === Upload Button === */
-  .upload-btn {
-    width: 100%;
-    padding: 12px;
-    font-size: 16px;
-    background: #28a745;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all ease 0.3s;
-  }
-  
-  .upload-btn:hover {
-    background: #218838;
-  }
-  
-  /* === Responsive Design === */
-  @media (max-width: 500px) {
-    .upload-container {
-      width: 90%;
-      padding: 20px;
-    }
-  
-    .upload-label, .upload-btn {
-      font-size: 14px;
-    }
-  }
-  
+  background: #fafafa;
+  color: white;
+}
+
+.remove-btn:hover {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Submit Button */
+.submitbtn {
+  background: #007bff;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.submitbtn:hover {
+  background: #0056b3;
+}
+

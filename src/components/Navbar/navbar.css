@@ -1,9 +1,10 @@
 .navbar {
     padding: 10px;
-    background: #333;
+    /* background:transparent; */
     color: white;
     display: flex;
-    background: #333;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
     height: 100px;
     justify-content: space-between;
     align-items: center;
@@ -12,13 +13,25 @@
     width: 100%;
     z-index: 1000;
 }
+.nav_logo{
+    height: 100%;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    object-fit: contain;
+}
+.nav-img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
 .nav_btn{
     text-decoration: none;
     margin: 10px;
     color: white;
     font-size: 1.2rem;
     transition: all 0.3s ease;
-
 }
 .nav_btn:hover{
     color: #f9f9f9;

@@ -10,6 +10,7 @@ import JobCreation from './components/HR_dash/JobCreation/JobCreation';
 import { useEffect } from 'react';
 import ShortlistedCandidates from './components/HR_dash/shortlist/shortlist';
 import { ToastContainer } from 'react-toastify';
+import Hr_profile from './components/HR_dash/ProfilePage/hr_profile';
 const allowedDomains=["citchennai.net"];
 function App() {
   const { loginWithRedirect, logout, user, isAuthenticated } = useAuth0();
@@ -28,7 +29,7 @@ function App() {
   }, [isAuthenticated, isAuthorized, navigate]);
   
   return (
-    <div className='app'>
+    <div className='App'>
       <Navbar isAuthorized={isAuthorized}/>
       <ToastContainer />
       {/* {!isAuthenticated ? (
@@ -38,8 +39,9 @@ function App() {
       {isAuthorized ? (
         <>
           <Route path="/hr-dashboard" element={<><HRDashboard/></>} />
+        <Route path="/hr-dashboard/profile" element={<><Hr_profile/></>} />
         <Route path="/hr-dashboard/create-job" element={<><JobCreation /></>} />
-        <Route path="/hr-dashboard/job/:jobId" element={<><ShortlistedCandidates/></>} />
+        <Route path="/hr-dashboard/job/:jobId" element={<><ShortlistedCandidates /></>} />
       
         </>
       ) : (

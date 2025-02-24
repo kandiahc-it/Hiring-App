@@ -37,7 +37,7 @@ router.get("/", async (req, res) => {
 // Get the latest 5 job requirements for customer page
 router.get("/latest", async (req, res) => {
   try {
-    const jobs = await Job.find().sort({ createdAt: -1 }).limit(5);
+    const jobs = await Job.find().sort({ createdAt: -1 }).limit(20);
     res.json(jobs);
   } catch (error) {
     res.status(500).json({ error: "Error fetching latest jobs" });

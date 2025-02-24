@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import "./upload.css";
 import { toast } from "react-toastify";
+import Require from "../Require/Require";
 
 const UploadResume = () => {
   const { jobId } = useParams(); // Get Job ID from URL
@@ -21,6 +22,7 @@ const UploadResume = () => {
     formData.append("resume", file);
     formData.append("name", name);   // Send name
     formData.append("email", email); // Send email
+    formData.append("linkedInProfile", linkedInProfile); // Send LinkedIn Profile
 
     try {
       await axios.post(
@@ -35,6 +37,7 @@ const UploadResume = () => {
       setFile(null); // Reset file input after upload
       setName("");   // Reset name field
       setEmail("");  // Reset email field
+      setLinkedInProfile(""); // Reset LinkedIn Profile field
     } catch (error) {
       console.error("Upload error:", error.response?.data || error.message);
       toast.error("Upload failed. Please try again.");
@@ -42,7 +45,9 @@ const UploadResume = () => {
   };
 
   return (
+    <div className="upload_page">
     <div className="upload-container">
+      <h1>Upload Resume</h1>
       <h2>Please fill the details below..</h2>
 
       <div className="input-group">
@@ -84,6 +89,8 @@ const UploadResume = () => {
       <button onClick={handleUpload} className="upload-btn">
         🚀 Upload
       </button>
+    </div>
+    <Require jobid={jobId}/>
     </div>
   );
 };

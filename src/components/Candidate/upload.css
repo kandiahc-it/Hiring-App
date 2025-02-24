@@ -1,69 +1,111 @@
+/* === Global Styling === */
+* {
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+.upload_page{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  padding-top: 200px;
+  
+}
+/* === Upload Container === */
 .upload-container {
-    text-align: center;
-    background: #ffffff;
-    /* height: 100vh; */
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding-top: 150px;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    /* max-width: 400px; */
-    /* margin-left: 40px;
-    margin-right: 40px; */
+  width: 40%;
+  /* padding-top:150px; */
+  margin-left: auto; 
+  margin-right: auto;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: 0.3s;
+}
 
+.upload-container:hover {
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+/* === Heading === */
+.upload-container h2 {
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+/* === Input Fields === */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.input-field {
+  padding: 12px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+.input-field:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* === File Upload Box === */
+.upload-box {
+  margin-bottom: 20px;
+}
+
+.upload-input {
+  display: none;
+}
+
+.upload-label {
+  display: block;
+  padding: 12px;
+  background: #007bff;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all ease 0.3s;
+}
+
+.upload-label:hover {
+  background: #0056b3;
+}
+
+/* === Upload Button === */
+.upload-btn {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  background: #28a745;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all ease 0.3s;
+}
+
+.upload-btn:hover {
+  background: #218838;
+}
+
+/* === Responsive Design === */
+@media (max-width: 500px) {
+  .upload-container {
+    width: 90%;
+    padding: 20px;
   }
-  
-  h2 {
-    color: #333;
-    margin-bottom: 20px;
-  }
-  
-  .upload-box {
-    position: relative;
-    border: 2px dashed #007bff;
-    padding: 15px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: 0.3s;
-    background: #f9f9f9;
-  }
-  
-  .upload-box:hover {
-    background: #e0f2ff;
-  }
-  
-  .upload-input {
-    display: none;
-  }
-  
-  .upload-label {
-    font-size: 16px;
-    color: #ffffff;
-    cursor: pointer;
-  }
-  
-  .upload-btn {
-    background: #007bff;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    margin-top: 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: 0.3s;
-  }
-  
-  .upload-btn:hover {
-    background: #0056b3;
-  }
-  
-  .upload-message {
-    margin-top: 15px;
+
+  .upload-label, .upload-btn {
     font-size: 14px;
-    font-weight: bold;
   }
-  
+}

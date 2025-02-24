@@ -27,6 +27,7 @@ router.post("/upload/:jobId", upload.single("resume"), async (req, res) => {
       filename: req.file.originalname,
       contentType: req.file.mimetype,
       fileData: req.file.buffer, // ✅ Store resume as binary in MongoDB
+      details:"",
     });
 
     await newResume.save();
